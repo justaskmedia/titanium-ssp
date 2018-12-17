@@ -1,0 +1,47 @@
+<div class="generate-wrapper">
+  <h1 class="dark">Generate API Key.</h1>
+  <p class="dark">API requests are sent directly to Morneau Shepell from your users application.</p>
+
+  <h2 class="dark">Your API Key will be displayed once.</h2>
+
+  <p class="dark">You should store this key in a safe place. If you lose your API key you will need to contact your account manager to generate new credentials.</p>
+
+  <button class="btn btn-lg">Create new API key</button>
+</div>
+
+<div class="overlay" *ngIf="showAPI">
+    <div class="show-key">
+      <header class="overlay-header">
+        <h2 class="light">API Key</h2>
+
+        <button class="closeBtn" (click)="closeModal()">&times;</button>
+      </header>
+
+      <div class="display-api-key">
+          <div class="ms-field">
+              <label for="api-key" class="ms-label">Here is your API key:</label>
+              <input type="text" class="ms-input" name="api-key" id="api-key">
+
+              <div class="ms-input-icons">
+                  <button class="copyKeyBtn" (click)="copyAPIKey()">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.75 26.25H0.75V0.75H26.25V9.75" stroke="#0F293D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.75 35.25H35.25V9.75H9.75V35.25Z" stroke="#0F293D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>       
+                  </button>      
+                  
+                  <p *ngIf="copiedKey" [ngClass]="{'copied': copiedKey}">Copied</p>
+              </div>
+          </div>
+
+          <div class="api-key alert">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="ms-error">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M22.9976 11.8097C23.1036 17.8847 18.0746 22.8957 11.9996 23.0017C5.92565 23.1067 1.10665 18.2677 1.00165 12.1927C0.895645 6.11971 5.92565 1.10671 11.9996 1.00171C18.0736 0.895708 22.8926 5.73671 22.9976 11.8097V11.8097Z" stroke="#CB3983" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M11.9998 13.5V6.5" stroke="#CB3983" stroke-linecap="round" stroke-linejoin="round"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.4998 17C12.4998 17.276 12.2758 17.5 11.9998 17.5C11.7238 17.5 11.4998 17.276 11.4998 17C11.4998 16.724 11.7238 16.5 11.9998 16.5C12.2758 16.5 12.4998 16.724 12.4998 17V17Z" stroke="#CB3983" stroke-linejoin="round"/>
+            </svg>  
+            <p class="alert">Your API Key will only be displayed once.</p>
+          </div>
+      </div>
+    </div>
+</div>
