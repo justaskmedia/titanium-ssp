@@ -31,10 +31,13 @@ export class GenerateAPIComponent implements OnInit {
 
     // show that the key is copied
     this.copiedKey = true;
+    var that = this;
+
     // Hide
     setTimeout(function(){
-      this.copiedKey = false;
-    }, 200);
+      console.log(that.copiedKey)
+      that.copiedKey = false;
+    }, 2000);
 
   }
 

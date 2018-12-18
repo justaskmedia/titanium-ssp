@@ -109,3 +109,18 @@
         margin-left: -7px;
     }
 }
+
+
+
+.error-msg-v2 {
+    display: block;
+    background: $alert;
+    border-radius: 4px;
+    padding: 2% 4%;
+    max-width: 420px;
+    margin-top: 30px;
+    margin-bottom: -30px;
+    p {
+        @include font-size(1.4);
+    }
+}

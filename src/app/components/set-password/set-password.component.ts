@@ -10,6 +10,7 @@ export class SetPasswordComponent implements OnInit {
   showPassword:boolean = false;
   pwdError:boolean = false;
   pwdSuccess:boolean = false;
+  pwdServerError:boolean = false;
 
   constructor() { }
 

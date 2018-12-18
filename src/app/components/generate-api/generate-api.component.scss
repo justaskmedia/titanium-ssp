@@ -94,6 +94,7 @@
         font-style: italic;
         border-radius: 4px;
         animation-duration: 2s;
+        animation-name: fadeIn;
 
 
             &.fadeOut {
@@ -142,12 +143,12 @@
     }
 }
 
-@-webkit-keyframes fadeOut {
+ @keyframes fadeOut {
     0% {opacity: 1;}
     100% {opacity: 0;}
  }
 
- @keyframes fadeOut {
-    0% {opacity: 1;}
-    100% {opacity: 0;}
+ @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
  }
